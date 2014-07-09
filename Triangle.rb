@@ -22,6 +22,9 @@ class Triangle < Polygon
     raise ArgumentError.new("You need a positive number or greater than") if sides.select { |sides| sides.class != Fixnum || sides < 0 }.size != 0
   end
 
+  def calculate_perimeter
+    @sides.reduce(:+)
+  end
 
 
 
