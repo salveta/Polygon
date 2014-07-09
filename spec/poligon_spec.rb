@@ -18,4 +18,8 @@ describe "A Polygon" do
     expect{Triangle.new(3,-5,4)}.to raise_error(ArgumentError)
   end
 
+  it "is also a Polygon" do
+    expect(Triangle.new(2,2,3).class.ancestors).to include(Polygon)
+  end
+
 end
