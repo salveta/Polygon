@@ -1,6 +1,6 @@
 require './Polygon'
 
-class Triangle 
+class Triangle < Polygon
 
  
 
