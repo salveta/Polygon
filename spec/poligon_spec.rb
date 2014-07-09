@@ -17,6 +17,9 @@ describe "A Polygon" do
     expect{Triangle.new(1,2,3,4)}.to raise_error(ArgumentError)
   end
 
-
+  it "All sides have be positive and no words" do
+    expect{Triangle.new(1,2,"hola")}.to raise_error(ArgumentError)
+    expect{Triangle.new(1,-5,3)}.to raise_error(ArgumentError)
+  end
 
 end
