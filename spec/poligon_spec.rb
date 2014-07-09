@@ -22,4 +22,8 @@ describe "A Polygon" do
     expect(Triangle.new(2,2,3).class.ancestors).to include(Polygon)
   end
 
+  it "Calculate Area of Triangle" do
+    expect(Triangle.new(1,3,2).calculate_perimeter).to eq(6)
+  end
+
 end
