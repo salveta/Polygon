@@ -1,8 +1,7 @@
-class Triangle
+require './Polygon'
 
-  def initialize(*sides)
-    @sides=sides
-  end
+class Triangle < Polygon
+
 
   def number_sides
     3
