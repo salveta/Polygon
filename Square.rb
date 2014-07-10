@@ -1,6 +1,6 @@
 require './Polygon'
 
-class Square
+class Square < Polygon
 
   def initialize(*sides)
     @sides = sides
