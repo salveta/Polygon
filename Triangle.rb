@@ -2,32 +2,26 @@ require './Polygon'
 
 class Triangle < Polygon
 
-  def number_sides
-    @number_of_sides = 3
-  end
-
-  def need_three_sides(sides)
-    raise ArgumentError.new("You need three sides to be a Triangle") if sides.size < @number_of_sides
-    raise ArgumentError.new("You need three sides to be a Triangle") if sides.size > @number_of_sides
-  end
-
-  def calculate_perimeter
-    @sides.reduce(:+)
-  end
-
   def calculate_area
     area = 0
     area = Math.sqrt(calculate_perimeter*(calculate_perimeter-@sides[0])*(calculate_perimeter-@sides[1])*(calculate_perimeter-@sides[2]))
+    area.round(4)
   end
 
   def type_triangle
-    if (@sides[0] == @sides[1] && @sides[1] == @sides[2])
-      :equilateral
-    elsif (@sides[0]  == @sides[1] || @sides[0]  == @sides[2] || @sides[1] == @sides[2])
-      :isosceles
-    else
-      :scalene
-    end
+
+    type_of_triangle_by_equal_sides = {
+      1=>"I'm equilateral",
+      2=>"I'm isosceles",
+      3=>"I'm scalene"
+    }
+    return type_of_triangle_by_equal_sides[@sides.uniq.size]
+  end
+
+private
+
+  def set_number_of_sides
+    @number_of_sides = 3
   end
 
 end

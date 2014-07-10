@@ -2,12 +2,19 @@ require './Polygon'
 
 class Square < Polygon
 
-  def initialize(*sides)
-    @sides = sides
+  def number_of_sides
+    @number_of_sides
   end
 
-  def square_sides
-    @number_sides_square = 4
+
+  def type_square
+      
+  end
+
+  private
+
+  def set_number_of_sides
+    @number_of_sides = 4
   end
 
 end
