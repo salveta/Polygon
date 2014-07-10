@@ -23,11 +23,11 @@ describe "A Polygon" do
   end
 
   it "Calculate perimeter of Triangle" do
-    expect(Triangle.new(1,3,2).calculate_perimeter).to eq(6)
+    expect(Triangle.new(7,4,5).calculate_perimeter).to eq(8)
   end
 
   it "Calculate area of Triangle" do
-        expect(Triangle.new(3,4,5).calculate_perimeter).to eq(6)
+        expect(Triangle.new(7,4,5).calculate_area).to eq(2.8284271247461903)
   end
 
 end
