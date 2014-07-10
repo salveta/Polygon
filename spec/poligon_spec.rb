@@ -1,5 +1,5 @@
 require './Triangle'
-
+require './Square'
 
 describe "A Triangle" do
 
@@ -34,5 +34,14 @@ describe "A Triangle" do
   it "what type of Triangle is? " do
     expect(Triangle.new(3,2,3).type_triangle).to eq(:isosceles)
   end
+
+end
+
+describe "A Square" do
+
+it "Number os sides is four" do
+  expect(Square.new(1,2,3,4).number_sides).to eq(4)
+end
+
 
 end
