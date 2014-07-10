@@ -49,10 +49,10 @@ describe "A Square" do
     expect(Square.new(2,2,3,3).class.ancestors).to include(Polygon)
   end
 
- # it "All sides have to be positive and no words" do
- #   expect{Square.new(1,2,"hola",4)}.to raise_error(ArgumentError)
- #   expect{Square.new(3,-5,4,3)}.to raise_error(ArgumentError)
- # end
+  it "All sides have to be positive and no words" do
+    expect{Square.new(1,2,"hola",4)}.to raise_error(ArgumentError)
+    expect{Square.new(3,-5,4,3)}.to raise_error(ArgumentError)
+  end
 
   it "Calculate Perimeter Square" do
     expect(Square.new(1,2,3,4).calculate_perimeter).to eq(10)
@@ -60,7 +60,7 @@ describe "A Square" do
 
   it "what type of Square is? " do
     expect(Square.new(3,3,3,3).type_square).to eq("I'm a Square")
-    expect(Square.new(3,3,3,3).type_square).to eq("I'm a Rectangle")
+    expect(Square.new(3,2,2,3).type_square).to eq("I'm a Rectangle")
   end
 
 end
