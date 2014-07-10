@@ -12,7 +12,7 @@ class Triangle < Polygon
   end
 
   def calculate_perimeter
-    @sides.reduce(:+) / 2
+    @sides.reduce(:+)
   end
 
   def calculate_area
