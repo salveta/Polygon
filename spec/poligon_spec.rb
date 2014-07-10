@@ -1,6 +1,7 @@
 require './Triangle'
 
-describe "A Polygon" do
+
+describe "A Triangle" do
 
   it "Number of sides is three" do
    expect(Triangle.new(1,2,3).number_sides).to eq(3)
@@ -27,7 +28,11 @@ describe "A Polygon" do
   end
 
   it "Calculate area of Triangle" do
-    expect(Triangle.new(7,4,5).calculate_area).to eq(2.8284271247461903)
+    expect(Triangle.new(7,4,5).calculate_area).to eq(9.797958971132712)
+  end
+
+  it "what type of Triangle is? " do
+    expect(Triangle.new(3,2,3).type_triangle).to eq(:isosceles)
   end
 
 end

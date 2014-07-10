@@ -17,9 +17,7 @@ class Triangle < Polygon
 
   def calculate_area
     area = 0
-    area = Math.sqrt(calculate_perimeter*(calculate_perimeter-@sides[0])*(calculate_perimeter-@sides[0])*(calculate_perimeter-@sides[0]))
+    area = Math.sqrt(calculate_perimeter*(calculate_perimeter-@sides[0])*(calculate_perimeter-@sides[1])*(calculate_perimeter-@sides[2]))
   end
-
-
 
 end
