@@ -71,6 +71,6 @@ describe "A Square" do
   end
 
   it "Calculate area Square" do
-    expect(Square.new(5,5,5,5).calculate_area_square).to eq(25)
+    expect(Square.new(5,5,5,5).area_square).to eq(25)
   end
 end

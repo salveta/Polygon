@@ -10,8 +10,12 @@ class Square < Polygon
     return type_of_square_by_equal_sides[@sides.uniq.size]      
   end
     
-private
+  def area_square
+    square_area = 0
+    square_area = @sides[1]**2
+  end
 
+private
 
   def set_number_of_sides
     @number_of_sides = 4
