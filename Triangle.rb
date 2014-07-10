@@ -20,4 +20,14 @@ class Triangle < Polygon
     area = Math.sqrt(calculate_perimeter*(calculate_perimeter-@sides[0])*(calculate_perimeter-@sides[1])*(calculate_perimeter-@sides[2]))
   end
 
+  def type_triangle
+    if (@sides[0] == @sides[1] && @sides[1] == @sides[2])
+      :equilateral
+    elsif (@sides[0]  == @sides[1] || @sides[0]  == @sides[2] || @sides[1] == @sides[2])
+      :isosceles
+    else
+      :scalene
+    end
+  end
+
 end
