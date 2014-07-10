@@ -19,7 +19,7 @@ describe "A Triangle" do
     expect{Triangle.new(3,-5,4)}.to raise_error(ArgumentError)
   end
 
-  it "is also a Polygon" do
+  it "Is also a Polygon" do
     expect(Triangle.new(2,2,3).class.ancestors).to include(Polygon)
   end
 
@@ -36,7 +36,6 @@ describe "A Triangle" do
     expect(Triangle.new(2,2,2).type_triangle).to eq("I'm equilateral")
     expect(Triangle.new(4,2,3).type_triangle).to eq("I'm scalene")
   end
-
 end
 
 describe "A Square" do
@@ -45,7 +44,7 @@ describe "A Square" do
     expect(Square.new(1,2,3,4).number_of_sides).to eq(4)
   end
 
-  it "is also a Polygon" do
+  it "Is also a Polygon" do
     expect(Square.new(2,2,3,3).class.ancestors).to include(Polygon)
   end
 
@@ -63,4 +62,15 @@ describe "A Square" do
     expect(Square.new(3,2,2,3).type_square).to eq("I'm a Rectangle")
   end
 
+    it "Four sides to be a Triangle" do
+    expect{Square.new()}.to raise_error(ArgumentError)
+    expect{Square.new(1)}.to raise_error(ArgumentError)
+    expect{Square.new(1,2)}.to raise_error(ArgumentError)
+    expect{Square.new(1,2,3)}.to raise_error(ArgumentError)
+    expect{Square.new(1,2,3,4,5)}.to raise_error(ArgumentError)
+  end
+
+  it "Calculate area Square" do
+    expect(Square.new(5,5,5,5).calculate_area_square).to eq(25)
+  end
 end

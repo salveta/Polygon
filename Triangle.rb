@@ -9,7 +9,6 @@ class Triangle < Polygon
   end
 
   def type_triangle
-
     type_of_triangle_by_equal_sides = {
       1=>"I'm equilateral",
       2=>"I'm isosceles",
