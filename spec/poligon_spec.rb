@@ -39,9 +39,12 @@ end
 
 describe "A Square" do
 
-it "Number os sides is four" do
-  expect(Square.new(1,2,3,4).number_sides).to eq(4)
-end
+  it "Number os sides is four" do
+    expect(Square.new(1,2,3,4).number_sides).to eq(4)
+  end
 
+  it "is also a Polygon" do
+    expect(Square.new(2,2,3).class.ancestors).to include(Polygon)
+  end
 
 end
