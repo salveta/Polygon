@@ -27,7 +27,7 @@ describe "A Polygon" do
   end
 
   it "Calculate area of Triangle" do
-        expect(Triangle.new(7,4,5).calculate_area).to eq(2.8284271247461903)
+    expect(Triangle.new(7,4,5).calculate_area).to eq(2.8284271247461903)
   end
 
 end

@@ -20,4 +20,6 @@ class Triangle < Polygon
     area = Math.sqrt(calculate_perimeter*(calculate_perimeter-@sides[0])*(calculate_perimeter-@sides[0])*(calculate_perimeter-@sides[0]))
   end
 
+
+
 end
