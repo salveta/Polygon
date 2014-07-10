@@ -6,7 +6,7 @@ class Square < Polygon
     @sides = sides
   end
 
-  def number_sides
+  def square_sides
     @number_sides_square = 4
   end
 
