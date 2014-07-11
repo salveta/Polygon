@@ -82,5 +82,9 @@ describe "A Isosceles" do
     expect(Isosceles.new(2,2,3).class.ancestors).to include(Triangle)
   end
 
+  it "Calculate area of Triangle Isosceles" do
+    expect(Isosceles.new(7,7,5).calculate_area).to eq(190.7141)
+  end
+
 
 end
