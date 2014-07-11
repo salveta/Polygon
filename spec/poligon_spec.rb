@@ -74,3 +74,12 @@ describe "A Square" do
     expect(Square.new(5,5,5,5).area_square).to eq(25)
   end
 end
+
+describe "A Isosceles" do
+
+  it "Is also a Triangle" do
+    expect(Isosceles.new(2,2,3).class.ancestors).to include(Triangle)
+  end
+
+
+end
