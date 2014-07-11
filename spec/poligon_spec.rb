@@ -1,5 +1,6 @@
 require './Triangle'
 require './Square'
+require './Isosceles'
 
 describe "A Triangle" do
 

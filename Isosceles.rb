@@ -1,7 +1,7 @@
 require './Triangle'
 
-class Isosceles 
 
+class Isosceles < Triangle
 
     
 
