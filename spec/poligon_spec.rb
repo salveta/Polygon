@@ -83,7 +83,12 @@ describe "A Isosceles" do
   end
 
   it "Calculate area of Triangle Isosceles" do
-    expect(Isosceles.new(7,7,5).calculate_area).to eq(190.7141)
+    expect(Isosceles.new(7,7,5).calculate_area).to eq(195.7141)
+  end
+
+    it "All sides have to be positive and no words" do
+    expect{Isosceles.new(1,2,"hola",4)}.to raise_error(ArgumentError)
+    expect{Isosceles.new(3,-5,4,3)}.to raise_error(ArgumentError)
   end
 
 
