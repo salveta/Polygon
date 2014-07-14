@@ -75,6 +75,10 @@ describe "A Equilateral" do
     expect(Equilateral.new(2).class.ancestors).to include(Triangle)
   end
 
+  it "Is also a Polygon" do
+    expect(Equilateral.new(3).class.ancestors).to include(Polygon)
+  end
+
   it "calculate perimeter Equilateral" do
     expect(Equilateral.new(2).calculate_perimeter).to eq(6)   
   end
@@ -94,6 +98,10 @@ describe "A Scalene" do
 
   it "Is also a Polygon" do
     expect(Scalene.new(1,2,3).class.ancestors).to include(Polygon)
+  end
+
+  it "Is also a Triangle" do
+    expect(Scalene.new(2,3,4).class.ancestors).to include(Triangle)
   end
 end
 
