@@ -78,6 +78,10 @@ end
 
 describe "A Isosceles" do
 
+  it "pair of sides defined it" do
+    expect{Isosceles.new(2,3)}.to_not raise_error()   
+  end 
+
   it "Is also a Triangle" do
     expect(Isosceles.new(2,3).class.ancestors).to include(Triangle)
   end
@@ -91,5 +95,7 @@ describe "A Isosceles" do
     expect(Isosceles.new(2,3).calculate_perimeter).to eq(7)   
   end
 
-
+  it "Is also a Polygon" do
+    expect(Isosceles.new(2,3).class.ancestors).to include(Polygon)
+  end
 end
