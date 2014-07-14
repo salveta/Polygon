@@ -1,6 +1,7 @@
 require './Triangle'
 require './Square'
 require './Isosceles'
+require './Equilateral'
 
 describe "A Triangle" do
 
@@ -98,4 +99,15 @@ describe "A Isosceles" do
   it "Is also a Polygon" do
     expect(Isosceles.new(2,3).class.ancestors).to include(Polygon)
   end
+end
+
+describe "A Equilateral" do
+
+  it "One side defined it" do
+    expect{Equilateral.new(1)}to_not raise_error()
+  end
+
+
+
+
 end
