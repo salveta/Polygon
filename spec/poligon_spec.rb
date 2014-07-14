@@ -83,8 +83,8 @@ describe "A Isosceles" do
   end
 
     it "All sides have to be positive and no words" do
-    expect{Isosceles.new(1,2,"hola",4)}.to raise_error(ArgumentError)
-    expect{Isosceles.new(3,-5,4,3)}.to raise_error(ArgumentError)
+    expect{Isosceles.new(1,2,"hola")}.to raise_error(ArgumentError)
+    expect{Isosceles.new(3,-5,4)}.to raise_error(ArgumentError)
   end
 
   it "calculate perimeter Isosceles" do
