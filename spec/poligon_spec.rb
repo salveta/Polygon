@@ -79,16 +79,16 @@ end
 describe "A Isosceles" do
 
   it "Is also a Triangle" do
-    expect(Isosceles.new(2,2,3).class.ancestors).to include(Triangle)
-  end
-
-  it "Calculate area of Triangle Isosceles" do
-    expect(Isosceles.new(7,7,5).calculate_area).to eq(195.7141)
+    expect(Isosceles.new(2,3,3).class.ancestors).to include(Triangle)
   end
 
     it "All sides have to be positive and no words" do
     expect{Isosceles.new(1,2,"hola",4)}.to raise_error(ArgumentError)
     expect{Isosceles.new(3,-5,4,3)}.to raise_error(ArgumentError)
+  end
+
+  it "calculate perimeter Isosceles" do
+    expect(Isosceles.new(2,3).calculate_perimeter).to eq(7)   
   end
 
 
