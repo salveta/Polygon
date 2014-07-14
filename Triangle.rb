@@ -8,15 +8,6 @@ class Triangle < Polygon
     area.round(4)
   end
 
-  def type_triangle
-    type_of_triangle_by_equal_sides = {
-      1=>"I'm equilateral",
-      2=>"I'm isosceles",
-      3=>"I'm scalene"
-    }
-    return type_of_triangle_by_equal_sides[@sides.uniq.size]
-  end
-
 private
 
   def set_number_of_sides

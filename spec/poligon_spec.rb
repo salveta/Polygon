@@ -1,8 +1,10 @@
 require './Triangle'
-require './Square'
 require './Isosceles'
 require './Equilateral'
 require './Scalene'
+require './quadrangle'
+require './Square'
+require './Rectangle'
 
 describe "A Triangle" do
 
@@ -32,12 +34,6 @@ describe "A Triangle" do
 
   it "Calculate area of Triangle" do
     expect(Triangle.new(7,4,5).calculate_area).to eq(137.8695)
-  end
-
-  it "what type of Triangle is? " do
-    expect(Triangle.new(3,2,3).type_triangle).to eq("I'm isosceles")
-    expect(Triangle.new(2,2,2).type_triangle).to eq("I'm equilateral")
-    expect(Triangle.new(4,2,3).type_triangle).to eq("I'm scalene")
   end
 end
 
@@ -105,34 +101,63 @@ describe "A Scalene" do
   end
 end
 
-describe "A Square" do
+describe "A Quadrangle" do
+
+  it "Four side equal defined a Quadrangle" do
+    expect{Quadrangle.new(4,4,4,4)}. to_not raise_error()
+  end
 
   it "Number of sides is four" do
-    expect(Square.new(1,2,3,4).number_of_sides).to eq(4)
+    expect(Quadrangle.new(4,4,4,4).number_of_sides).to eq(4)
   end
 
   it "Is also a Polygon" do
-    expect(Square.new(2,2,3,3).class.ancestors).to include(Polygon)
+    expect(Quadrangle.new(2,2,4,4).class.ancestors).to include(Polygon)
   end
 
   it "All sides have to be positive and no words" do
-    expect{Square.new(1,2,"hola",4)}.to raise_error(ArgumentError)
-    expect{Square.new(3,-5,4,3)}.to raise_error(ArgumentError)
+    expect{Quadrangle.new(2,2,"hola",2)}.to raise_error(ArgumentError)
+    expect{Quadrangle.new(3,-5,3,3)}.to raise_error(ArgumentError)
   end
 
-  it "Calculate Perimeter Square" do
-    expect(Square.new(1,2,3,4).calculate_perimeter).to eq(10)
+  it "Calculate Perimeter Quadrangle" do
+    expect(Quadrangle.new(4,4,4,4).calculate_perimeter).to eq(16)
+  end
+end
+
+describe "A Rectangle" do
+
+  it "Two pair of sides equal and other pair of sides equal to be a Rectangle" do
+    expect{Rectangle.new(4,2)}.to_not raise_error()   
+  end 
+
+  it "Is also a Polygon" do
+    expect(Rectangle.new(2,4).class.ancestors).to include(Polygon)
   end
 
-    it "Four sides to be a Triangle" do
-    expect{Square.new()}.to raise_error(ArgumentError)
-    expect{Square.new(1)}.to raise_error(ArgumentError)
-    expect{Square.new(1,2)}.to raise_error(ArgumentError)
-    expect{Square.new(1,2,3)}.to raise_error(ArgumentError)
-    expect{Square.new(1,2,3,4,5)}.to raise_error(ArgumentError)
+  it "Is also a Square" do
+    expect(Rectangle.new(4,5).class.ancestors).to include(Quadrangle)
   end
 
+  it "Caculate area of Rectangle" do
+    expect(Rectangle.new(2,4).area_rectangle).to eq(8)
+  end
+end
+
+describe "A Square" do
+
+  it "Four sides are equal to be a Square" do
+    expect{Square.new(4)}.to_not raise_error()   
+  end
+
+  it "Is also a Polygon" do
+    expect(Square.new(4).class.ancestors).to include(Polygon)
+  end
+
+  it "Is also a Square" do
+    expect(Square.new(4).class.ancestors).to include(Quadrangle)
+  end
   it "Calculate area Square" do
-    expect(Square.new(5,5,5,5).area_square).to eq(25)
+    expect(Square.new(5).area_square).to eq(25)
   end
 end

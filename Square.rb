@@ -1,16 +1,14 @@
-require './Polygon'
+require './quadrangle'
 
-class Square < Polygon
-    
+class Square < Quadrangle
+
+  def initialize(one_side)
+    super(one_side, one_side, one_side, one_side)
+  end
+
   def area_square
     square_area = 0
     square_area = @sides[1]**2
-  end
-
-private
-
-  def set_number_of_sides
-    @number_of_sides = 4
   end
 
 end
