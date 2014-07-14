@@ -79,7 +79,7 @@ end
 describe "A Isosceles" do
 
   it "Is also a Triangle" do
-    expect(Isosceles.new(2,3,3).class.ancestors).to include(Triangle)
+    expect(Isosceles.new(2,3).class.ancestors).to include(Triangle)
   end
 
     it "All sides have to be positive and no words" do
