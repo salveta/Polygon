@@ -86,11 +86,11 @@ describe "A Scalene" do
     expect{Scalene.new(1,2,3)}.to_not raise_error()
   end
 
-  it "Three diferents side defined it" do
-    expect(Scalene.new(1,2,3).is_a_triangle_scalene?).to eq("I'm scalene")
-    expect(Scalene.new(1,3,3).is_a_triangle_scalene?).to eq("I'm not scalene. I'm Isosceles")
-    expect(Scalene.new(3,3,3).is_a_triangle_scalene?).to eq("I'm not scalene. I'm Equilateral")
-  end
+#  it "Three diferents side defined it" do
+#    expect(Scalene.new(1,2,3).is_a_triangle_scalene?).to eq("I'm scalene")
+#    expect(Scalene.new(1,3,3).is_a_triangle_scalene?).to eq("I'm not scalene. I'm Isosceles")
+#    expect(Scalene.new(3,3,3).is_a_triangle_scalene?).to eq("I'm not scalene. I'm Equilateral")
+#  end
 
   it "Is also a Polygon" do
     expect(Scalene.new(1,2,3).class.ancestors).to include(Polygon)
@@ -98,6 +98,10 @@ describe "A Scalene" do
 
   it "Is also a Triangle" do
     expect(Scalene.new(2,3,4).class.ancestors).to include(Triangle)
+  end
+
+  it "You need three diferent sides" do
+    expect{Scalene.new(3,3,2)}.to raise_error(ArgumentError)
   end
 end
 
@@ -142,6 +146,10 @@ describe "A Rectangle" do
   it "Caculate area of Rectangle" do
     expect(Rectangle.new(2,4).area_rectangle).to eq(8)
   end
+
+  it "Caculate perimeter of Rectangle" do
+    expect(Rectangle.new(2,4).perimeter_rectangle).to eq(12)
+  end
 end
 
 describe "A Square" do
@@ -157,6 +165,10 @@ describe "A Square" do
   it "Is also a Square" do
     expect(Square.new(4).class.ancestors).to include(Quadrangle)
   end
+  it "Calculate perimeter Square" do
+    expect(Square.new(5).perimeter_square).to eq(20)
+  end
+
   it "Calculate area Square" do
     expect(Square.new(5).area_square).to eq(25)
   end

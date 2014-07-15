@@ -14,4 +14,8 @@ private
     @number_of_sides = 3
   end
 
+  def set_number_of_angles
+    @number_of_angles = 3
+  end
+
 end
